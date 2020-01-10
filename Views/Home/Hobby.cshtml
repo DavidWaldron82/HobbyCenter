@@ -1,0 +1,20 @@
+@model ViewModel
+<h1>@Model.OneHobby.Name</h1>
+<a href="/Dashboard">Home</a>
+<a href="/clear">Logout</a>
+
+<div class="text-center">
+
+</div>
+
+    <h3>Description:</h3>
+    <p>@Model.OneHobby.Description</p>
+    <a asp-action="Edit" asp-route-Id=@Model.OneHobby.HobbyId>Edit Hobby</a>
+    <h3>@Model.OneHobby.Name Enthusiasts:</h3>
+    @{
+        foreach(var p in @Model.OneHobby.Ethusiasts){
+        <li>@p.User.FirstName</li>
+    }}
+    <h3>Become an enthusiast!</h3>
+    <a asp-action="Join" asp-route-Id=@Model.OneHobby.HobbyId>Add to Hobbies</a>
+    <span asp-validation-for="Enthusiasts"></span>

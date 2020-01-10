@@ -1,0 +1,21 @@
+@model ViewModel
+<h1>Create a Hobby</h1>
+<a href="/clear">Logout</a>
+
+<div class="text-center">
+    
+    </div>
+        <form action="/createhobby" method="post">
+            <div class="form-group">
+                <label>Name:</label>
+                <input asp-for="OneHobby.Name" class="form-control">
+                <span asp-validation-for="OneHobby.Name"></span>
+            </div>
+            <div class="form-group">
+                <label>Description:</label>
+                <textarea asp-for="OneHobby.Description" class="form-control"rows="3"></textarea>
+                <span asp-validation-for="OneHobby.Description"></span>
+            </div>
+            <input type="submit" class="btn btn-primary">
+        </form>
+    </div>

@@ -1,0 +1,19 @@
+@model ViewModel
+<h1>Dojo Activity Center</h1>
+<h3>Hobbies</h3>
+<a href="/clear">Logout</a>
+         <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>Enthusiasts</th>
+            </tr>
+            @{
+                foreach(Hobby x in @Model.AllHobbies) {
+                    <tr>
+                        <td><a asp-action="Hobby" asp-route-Id=@x.HobbyId>@x.Name</a></td>
+                        <td>@x.Ethusiasts.Count</td>
+                    </tr>
+                }
+            }
+            </table>
+            <a href="New">Add Hobby</a>
